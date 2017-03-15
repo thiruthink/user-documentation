@@ -1,8 +1,8 @@
-An *awaitable* is the key construct in `async` code. An awaitable is a first-class Hack object that represents a possibly asynchronous operation that may or may not have completed. You `await` the awaitable until the operation has completed. 
+An *awaitable* is the key construct in `async` code. An awaitable is a first-class Hack object that represents a possibly asynchronous operation that may or may not have completed. You `await` the awaitable until the operation has completed.
 
 ## `Awaitable`
 
-Awaitables are represented through the Hack interface called `Awaitable`. While there are several classes that implement `Awaitable`, there is no need to concern yourself with their implementation details. `Awaitable` is the only interface you need. 
+Awaitables are represented through the Hack interface called `Awaitable`. While there are several classes that implement `Awaitable`, there is no need to concern yourself with their implementation details. `Awaitable` is the only interface you need.
 
 The type returned from an async function is `Awaitable<T>`, where `T` is the final result type (e.g., `int`) of the awaited value.
 
@@ -23,7 +23,7 @@ In most cases, you will prefer to `await` an `Awaitable` so that other tasks can
 
 ### Batching Awaitables
 
-Many times you will `await` on one `Awaitable`, get the result and move on. 
+Many times you will `await` on one `Awaitable`, get the result and move on.
 
 @@ awaitables-examples/single-awaitable.php @@
 
@@ -42,7 +42,7 @@ Here we are using one of the two built-in async helper functions in the `HH\Asio
 
 Sometimes you want to get a result out of an awaitable when the function you are in **is not** `async`. For this there is `HH\Asio\join()` which takes an `Awaitable` and blocks until it resolves into a result.
 
-This means that invocations of async functions from the global scope (aka psuedomain) cannot be awaited, and must be joined.
+This means that invocations of async functions from the global scope (aka pseudomain) cannot be awaited, and must be joined.
 
 @@ awaitables-examples/join.php @@
 
